@@ -1,6 +1,6 @@
 package nl.kolvoort.ds;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Stretchable {
 
 	private double length;
 	private double width;
@@ -28,5 +28,19 @@ public class Rectangle extends Shape {
 	
 	public double getWidth(){
 		return width;
+	}
+
+	@Override
+	public void stretch(double factor) {
+		if (factor <= 0)
+			throw new IllegalArgumentException();
+		
+		if (length > width){
+			length *= factor;
+		}
+		else{
+			width *= factor;
+		}
+		
 	}
 }

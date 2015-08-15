@@ -23,7 +23,7 @@ public class ShapeDemo {
 	 */
 	public static void main(String[] args) {
 		Shape[] a = { new Circle(2.0), new Rectangle(1.0, 3.0), null, };
-		
+		((Rectangle) a[1]).stretch(3.75);
 		System.out.println("Total area = " + totalArea(a));
 		printAll(a);
 		
